@@ -1,0 +1,15 @@
+{
+  "version": "1.0",
+  "name": "Map",
+  "description": "Ejercicio map",
+  "package_path": "https://googledrive.com/host/0B2Uw8rxJPvg-SG1lV0FkMjEwZWs/package.zip",
+  "icons": {
+    "16": "/ico_16.png",
+    "48": "/ico_48.png",
+    "128": "/ico_128.png"
+  },
+  "developer": {
+    "name": "SMM",
+    "url": "https://www.miriadax.net/web/html5mooc"
+  }
+}

@@ -1,0 +1,40 @@
+<!doctype html>
+<!-- Modulo 6: p2p obligatorio: objeto window  -->
+<html>
+<head>
+	<title>Objeto window</title>
+	<meta charset="UTF-8">
+	<link rel="stylesheet" type="text/css" href="19_mod6_p2p_obl.css">
+	<script type="text/javascript">
+	function start () {
+		var respuesta = prompt("¿Qué objeto del DOM quieres consultar?"); 
+		
+		
+		if (typeof window[respuesta] !== 'object' && respuesta !== 'window') {
+			tabla.innerHTML =  "<table><td> Objeto NO valido</td></tr></table>";
+		}else{
+			pinta_tabla (); 
+		} 
+	}
+		
+	  function pinta_tabla() {
+	    var i, tabla = document.getElementById("tabla");
+
+		for (i in window){
+			if(typeof(window[i]) === 'object' || typeof(window[i]) ==='function'){
+				tabla.innerHTML +=  "<tr><td>" + i  + "</td><td> no es imprimible</td></tr>";
+			} else {
+				tabla.innerHTML += "<tr><td>" + i + "</td><td> " + window[i] + "</td></tr>";
+			}
+		}
+	  }
+	</script>
+</head>
+<body>
+  <h2>Objeto DOM</h2>
+	<table id="tabla"><tr><th> Propiedad </th><th> Valor </th></tr></table> 
+	<script type="text/javascript">
+	  start();
+	</script>
+</body>
+</html>

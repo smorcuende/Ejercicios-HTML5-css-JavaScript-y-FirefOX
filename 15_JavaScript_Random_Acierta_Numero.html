@@ -1,0 +1,36 @@
+<!doctype html>
+<!-- Modulo 5: Juego random / acierta el numero  -->
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Juego: acierta el número</title>
+</head>
+<body>
+	<h1>Adivina que número saldrá: 1, 2 ó 3 (你猜怎么着，你数得： 1 ， 2或3)</h1>
+	<script type="text/javascript">
+		function num() {
+			return Math.ceil(Math.random() * 3);
+		}
+
+		var resultado = num();
+  		var respuesta = prompt("Acierta el número que saldrá: 1, 2 ó 3 \n (猜猜你的号码： 1 ， 2或3))");
+  		var texto = "Lo sentimos, has fallado. ";
+  		var texto_chino = "对不起，你失败了。";
+  		 
+  		if (respuesta < 1 || respuesta > 3) {
+  			texto = "Debe contestar sólo 1, 2 ó 3. ";
+  			texto_chino = "你必须回答只有1个，2个或3个。 ";
+  		} else {
+  			if (respuesta == resultado) {
+	  			texto = "Enhorabuena, has acertado. ";
+	  			texto_chino = "恭喜你，你是对的。 ";
+	  		}
+	  		
+  		}
+  		//texto_chino = texto;
+  		document.write(texto + "El número correcto era el: " + resultado);
+  		document.write("<br/><br/>");
+  		document.write(texto_chino + "正确的数字是： " + resultado);
+	</script>
+</body>
+</html>

@@ -1,0 +1,15 @@
+{
+  "version": "1.0",
+  "name": "Cronometro",
+  "description": "Ejercicio cronometro",
+  "package_path": "https://googledrive.com/host/0B2Uw8rxJPvg-TDRlcW9jb3lRS0k/package.zip",
+  "icons": {
+    "16": "/icono.jpg",
+    "48": "/icono.jpg",
+    "128": "/icono.jpg"
+  },
+  "developer": {
+    "name": "SMM",
+    "url": "https://www.miriadax.net/web/html5mooc"
+  }
+}

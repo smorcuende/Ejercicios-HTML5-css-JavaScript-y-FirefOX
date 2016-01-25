@@ -1,0 +1,53 @@
+<!doctype html>
+<!-- Modulo 7: Sumatorios bucles while / for  -->
+<html>
+<head>
+	<title>Bucles</title>
+	<meta charset="UTF-8">
+	<script type="text/javascript">
+
+		function cancelado() {
+			alert("Suma cancelada. Marcador a Cero.");
+			return null;
+		}
+
+		function sumatorio_while() {
+			var numero = prompt("SUMATORIO WHILE\nEscribe un número para sumarlo: "); 
+			var total = 0;
+			var vista = "";
+
+			if (isNaN(numero)) {
+				return cancelado();
+			} else {
+				while(numero){
+					total += parseInt(numero);
+					vista += numero + ", ";
+					numero = prompt("Numeros sumados: " + vista + "\nTOTAL: " + total);
+				}
+			}
+		};
+
+		function sumatorio_for() {
+			var numero = prompt("SUMATORIO FOR\nEscribe un número para sumarlo: "); 
+			var total = 0;
+			var vista = "";
+
+			if (isNaN(numero)) {
+				return cancelado();
+			} else {
+				for(i=0; i < numero; i++){
+					total += parseInt(numero);
+					vista += numero + ", ";
+					numero = prompt("Numeros sumados: " + vista + "\nTOTAL: " + total);
+				}
+			}
+		};
+		</script>
+</head>
+<body>
+	<h1>Sumatorio de números</h1>
+	<button type="button" onclick="sumatorio_while()">Suma con bucle WHILE</button>
+	&nbsp;
+	<button type="button" onclick="sumatorio_for()">Suma con bucle FOR</button>
+</body>
+</html>

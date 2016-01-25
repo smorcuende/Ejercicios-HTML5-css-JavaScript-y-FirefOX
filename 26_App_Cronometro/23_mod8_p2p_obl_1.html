@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<!-- Modulo 8: p2p obligatorio: variaciones sobre cronometro con memoria; las variaciones están en sus comentarios  -->
+<html>
+<head>
+    <title>Cronómetro</title><meta charset="UTF-8">
+    <script type="text/javascript" src="./zepto.min.js" > </script>
+    <script type="text/javascript" src="./touch.js" > </script>
+    <script type="text/javascript">
+      $(function(){
+        localStorage.c = (localStorage.c || "0.0");
+        localStorage.lista = (localStorage.lista || "");
+
+        var t, cl = $("#crono");
+        var $lista = $("#lista");
+
+        function incr()     { localStorage.c = +localStorage.c + 0.1; }
+        function mostrar()  { cl.html((+localStorage.c).toFixed(1)); };
+        function arrancar() { t=setInterval(function(){incr(); mostrar()}, 100);};
+        function parar()    { clearInterval(t);  t=undefined; };
+        function cambiar()  {   if (!t) {
+                                    arrancar(); 
+                                }else {
+                                    parar(); 
+                                    //lista a mostrar
+                                    localStorage.lista = localStorage.lista + "<p>"+(+localStorage.c).toFixed(1)+"</p>";
+                                    $lista.html(localStorage.lista);
+                                    $t = undefined;
+                                }
+                            };
+
+        $("#cambiar").on('click', cambiar);
+        
+        $("#inicializar").on('click', function(){
+                                        // no inicializar si el cronometro esta en marcha 
+                                        if (t === undefined) {
+                                            localStorage.c="0.0"; 
+                                            localStorage.lista=""; 
+                                            $lista.html(localStorage.lista); 
+                                            mostrar(); 
+                                        } else {
+                                            alert("No puedes inicializar porque el cronómetro está en marcha");
+                                        }
+                                    }
+        );
+        mostrar();
+
+        //  Añadir los eventos tactiles tap y swipe sobre el body
+        $("body").on('tap', cambiar);
+        $("body").on('swipe', function(){ cl.html("0.0"); });
+      });
+    </script>
+
+    <style type="text/css">
+        div {
+            height: 200px;
+            width: 200px;
+            margin-left: 50px;
+            display: block;
+            margin-bottom: 20px;
+            text-align: center;
+            padding: 20px;
+            margin-top: 20px;
+            background-color: #F2F1EE;
+            border: 1px solid #000;
+        }
+        .cronometro {
+            border-radius: 24px;
+            max-width: 200px;
+        }
+        .lista {
+            border: none;
+            display: block;
+        }
+        
+    </style>
+</head>
+<body>
+
+<!-- Añadir una imagen de fondo con una esfera de cronómetro a la caja donde está el contador -->
+
+
+<div class="cronometro">
+    <h2>Cronómetro</h2>
+    <h3><span id="crono"> 0.0 </span> segundos </h3>
+
+    <button type="button" id="cambiar"> arrancar/parar </button>
+    <button type="button" id="inicializar">  inicializar </button>
+</div>
+<!--
+lista con los momentos que ha dejado de contar. Vaciarse al inicializar y guardada en localStorage
+-->
+<div id="lista" class="lista"></div>
+</body>
+</html>

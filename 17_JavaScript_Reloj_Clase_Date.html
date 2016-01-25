@@ -1,0 +1,43 @@
+<!doctype html>
+<!-- Modulo 6: Reloj -->
+<html>
+<head>
+	<title>Reloj</title>
+	<meta charset="UTF-8">
+
+	<script type="text/javascript">
+		function mostrar_hora() {
+			var cl = document.getElementById("hora");
+			var reloj = new Date();
+		  		cl.innerHTML = 
+		  			reloj.getHours() + "horas, " +
+		  			reloj.getMinutes() + "minutos, " +
+		  			reloj.getSeconds() + "segundos, " +
+		  			reloj.getMilliseconds() + "ms. "
+		  		;
+		}
+
+		function eventos() {
+			if (en_marcha != null) { 
+				clearInterval(en_marcha);
+				en_marcha=null;
+			} else {
+				en_marcha=setInterval(mostrar_hora, 1);
+			}
+		}
+	</script>
+
+</head>
+
+<body>
+	<h2>Reloj</h2>
+	<div id="hora">
+		<script type="text/javascript">
+		  mostrar_hora();
+		  var en_marcha = setInterval(mostrar_hora, 1); 
+		  var cl = document.getElementById("hora");
+		  cl.addEventListener('click', function(){eventos()});
+		</script>
+	<div>
+</body>
+</html>

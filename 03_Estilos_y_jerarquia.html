@@ -1,0 +1,60 @@
+﻿<!doctype html>
+<!-- Modulo 2: Estilos y jerarquia -->
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>Herencia</title>
+		<style type="text/css">
+			
+			/*
+				Combinaciones varias
+				Gana el de mayor puntuacion
+				body #caja .cabecera h1 		1,1,1,1
+				#caja .cabecera h1 				0,1,1,1
+				.cabecera h1				 	0,0,1,1
+				h1 								0,0,0,1
+
+			*/
+			/* Primero */
+			body #caja .cabecera h1{
+				color: green;
+			}
+			/* Segundo */
+			#caja .cabecera h1{
+				color: blue;
+			}
+			/* Tercero */
+			.cabecera h1{
+				color: purple;
+			}
+			/* Cuarto */
+			h1 {
+				color: grey;
+			}
+			/*
+				Estilos sobre elementos individuales
+				Gana el mas especifico
+				.cabecera > #caja > body
+			*/
+			/* Quinto */
+			.cabecera{
+				color: orange;
+			}
+			/* Sexto */
+			#caja{
+				color: yellow;
+			}
+			/* Septimo */
+			body{
+				color: red;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="caja">
+			<header class="cabecera">
+				<h1>Cabecera: header</h1>
+			</header>
+		</div>
+	</body>
+</html>

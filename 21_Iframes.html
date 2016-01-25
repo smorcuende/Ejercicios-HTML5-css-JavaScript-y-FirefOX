@@ -1,0 +1,75 @@
+<!doctype html>
+<!-- Modulo 7: iframes  -->
+<html>
+<head>
+<meta charset="UTF-8">
+
+  <style>
+    iframe {
+      padding:10px;
+      border:5px solid pink;
+      background-color:white;
+      width:300px;
+      height:350px;
+    }
+
+    #iframes {
+        display: -webkit-box;
+        display: -moz-box;
+        display: -ms-flexbox;
+        display: -webkit-flex;
+        display: flex;
+
+        -webkit-flex-wrap: wrap;
+        flex-wrap:wrap;
+    }
+
+    #marco {
+        background-color: pink;
+        padding: 10px;
+        margin: 10px;
+        border: 3px solid black;
+    }
+  </style>
+
+  <script type="text/javascript" src="http://zeptojs.com/zepto.min.js" ></script>
+  <script type="text/javascript">
+    $(function(){
+      var urls = ["http://getbootstrap.com","http://vishub.org"];
+
+      function mostrar(urls) {
+        var i, iframes="";
+        for (i=0;  i < urls.length;  ++i) {
+          iframes += "<table><tr><th>URL_" + i + "</th></tr><tr><td><iframe id='URL_" + i + "' src='" + urls[i] + "'></iframe></td></tr></table>";
+        }
+        $('#iframes').html(iframes);
+      };
+
+      $("#boton").on('click', function(){
+        urls.push($('#nuevo').val());
+        mostrar(urls);
+      });
+
+      $("#boton_borrar").on('click', function(){
+        urls.splice($('#borrar').val(), 1);
+        mostrar(urls);
+      });
+
+      mostrar(urls);
+    });
+  </script>
+</head>
+
+<body>
+<h3>Ejemplos de diseño responsivo</h3>
+
+<input type="text" id="nuevo" value="Nuevo URL" />
+<button type="button" id="boton"> Añadir </button>
+
+<input type="text" id="borrar" value="Borrar URL" />
+<button type="button" id="boton_borrar"> Borrar </button>
+<p>
+<div  id='marco'><div id="iframes" /></div>
+
+</body>
+</html>

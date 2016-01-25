@@ -1,0 +1,23 @@
+{
+  "version": "3.0",
+  "name": "Map",
+  "description": "Geolocalizacion",
+  "launch_path": "/host/0B2Uw8rxJPvg-LTFHeC1mdVktNHc/gmapa.html",
+
+  "icons": {
+    "16":  "/host/0B2Uw8rxJPvg-LTFHeC1mdVktNHc/ico_16.png",
+    "48":  "/host/0B2Uw8rxJPvg-LTFHeC1mdVktNHc/ico_48.png",
+    "128": "host/0B2Uw8rxJPvg-LTFHeC1mdVktNHc/ico_128.png"
+  },
+  "permissions":
+  {
+	"geolocation":
+	{
+		"description": "Permiso necesario para ubicación"
+	}
+  },
+  "developer": {
+    "name": "SMM",
+    "url": "https://www.miriadax.net/web/html5mooc"
+  }
+}

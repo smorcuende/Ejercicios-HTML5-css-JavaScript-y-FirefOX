@@ -1,0 +1,32 @@
+﻿body {
+  	font-family: "Open Sans", sans-serif;
+  	font-size: 14px;
+	color: #4E4E4E;
+	line-height: 1.4;
+	padding: 0px;
+	margin: 0px;
+}
+h1,h2 {
+	font-weight: bold;
+	margin: 1em 0px;
+}
+h1 {
+	font-size: 18px;
+}
+h2 {
+	font:400 17px "Titillium Web",sans-serif;
+	padding: 10px;
+	margin: 5px 0px 10px;
+	background-color: #f3f3f3;
+}
+li {
+	list-style-type: none;
+}
+.fecha_y_hora {
+	color:#A52A2A;
+	font-size: 11px;
+	line-height: 27.36px;
+}
+.mas_info {
+	color:#00f;
+}

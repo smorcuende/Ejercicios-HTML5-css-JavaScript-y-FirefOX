@@ -1,0 +1,16 @@
+{
+  "version": "1.0",
+  "name": "Cronometro",
+  "description": "Ejercicio cronometro",
+  "launch_path": "/host/0B2Uw8rxJPvg-UUNXaDA1bXYyOTA/23_mod8_p2p_obl_1.html",
+
+  "icons": {
+    "16":  "/host/0B2Uw8rxJPvg-eENobm4tOGE4UmM/icono.jpg",
+    "48":  "/host/0B2Uw8rxJPvg-eENobm4tOGE4UmM/icono.jpg",
+    "128": "/host/0B2Uw8rxJPvg-eENobm4tOGE4UmM/icono.jpg"
+  },
+  "developer": {
+    "name": "SMM",
+    "url": "https://www.miriadax.net/web/html5mooc"
+  }
+}
